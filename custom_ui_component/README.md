@@ -22,7 +22,8 @@ Pega offers two main modes of creating a custom UI component:
 - customizable Controls
 - customizable Sections  
 
-Controls are best to use if you want to be able to modify and persist a single property. One of their neat features is that our custom controls can be included in the "authoring menus" (these are the Basic and Advanced menus in the edit Section screen).
+Controls are best to use if you want to be able to modify and persist a single property. One of their neat features is that our custom controls can be included in the "authoring menus" (these are the Basic and Advanced menus in the edit Section screen).  
+
 ![Authoring menus](images/authoring_menus.png)
 
 ### Setup
