@@ -1,10 +1,9 @@
 # Custom UI elements in Pega
 
-Pega offers a wide range of built in User Interface elements (like autocomplete, rich text editor, charts), but what if you would like to include something that cannot be easily achieved with the default building blocks?  
+The Pega7 platform offers a wide range of built in User Interface elements (like autocomplete, rich text editor, charts), but what if you would like to include something that cannot be easily achieved with the default building blocks?  
 
-Pega offers a possibility for you to write custom frontend code. Using this feature, you could create a component which, when shown lets to users to ... play snake for example.
-
-![Snkae in Pega](images/snake.gif)
+Pega offers the possibility for you to write custom frontend code. Using this feature you can create a component which lets users... play snake!
+![Snake in Pega](images/snake.gif)
 
 Of course you can use these features for more serious purposes too. Think for example of UI components that leverage publicly available APIs (Application Programming Interfaces) to help your users during their work.
 
@@ -53,7 +52,7 @@ Save the section.
 
 #### Step 3: include the newly created section on a case screen
 
-Create a property named Address on a case you will want to include our custom UI element of type Single Page and of page definition Data-Address-Postal.  
+Create a property named Address of type Single Page and of page definition Data-Address-Postal on the case that you want to include our custom UI element.  
 On a section of the case, use section include with the following setup:
 - Page context: Use clipboard page
 - Class: Data-Address-Postal
@@ -64,7 +63,7 @@ After starting you case you should see something similar:
 
 ![Setup complete](images/setup_complete.png)
 
-Note: if nothing appears on the screen it can be, that .Address is not present on the clipboard. If this is the case, edit the case's pyDefault data transform to set the .Address.pyLabel property to an empty string.
+Note: if nothing appears on the screen it can be that .Address is not present on the clipboard. If this is the case, edit the case's pyDefault data transform to set the .Address.pyLabel property to an empty string.
 
 #### Step 4: obtain a Google maps API key
 
@@ -158,12 +157,12 @@ Your code should be similar to [this](https://gist.github.com/geritol/67209ef80c
 
 So now, our component seems to work fine. But have you tried to save it? If you have, you could see that nothing is persisted, and we will get empty fields after the screen is refreshed.
 
-In this part we will "tell" Pega which properties do the input fields belong to, so it can then save their data upon save or submit.
+In this part we will "tell" Pega which properties the input fields belong to, so it can then save their data upon save or submit.
 
 Pega needs the following attribute added to a field, so it can save its value:
 ```name="$PpyWorkPage$p<propery-name>"```, replace ```<property-name>``` with the property on the ```pyWorkPage``` you what to bind your field to. If the property is embedded under a page it will look like: ```name="$PpyWorkPage$p<page-name>$p<property-name>"```. So if you would like to persist the city name, you should add the following to your input where the city name will be entered: ```name="$PpyWorkPage$pAddress$ppyCity"```.
 
-You would not like this to be hardcoded for sure, as your section could be called with other contexts than what we currently have. This can be easily done using Pega's public API.
+This should not be hardcoded, as your section could be called with other contexts than what we currently have. This can be easily done using Pega's public API.
 
 ```HTML
 <!-- save the primary page to primaryPage variable -->
@@ -183,7 +182,7 @@ If you did everything right, you should see the values entered in the input fiel
 
 ### Showing clipboard data
 
-Cool! We have our values persisted, but the input field are still empty after the page is saved and refreshed. We should show the saved values in those input fields! Luckily this is not too hard. We can also rely on the Pega public API to do this.
+Cool! We have our values persisted, but the input fields are still empty after the page is saved and refreshed. We should show the saved values in those input fields! Luckily this is not too hard. We can also rely on the Pega public API to do this.
 
 ```HTML
 <!-- save the primary page to primaryPage variable -->
