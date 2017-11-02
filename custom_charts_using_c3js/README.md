@@ -8,7 +8,7 @@ A short tutorial.
 
 * In the harness you what the charts to be displayed go to the ```Scripts & Styles``` tab. 
 * Add a script, set its type to ```js```, for its name select d3 (D3.js is included by default in Pega). 
-* Click the + button to add a new script, set its type to ``js``` in the name field type ```c3```. 
+* Click the + button to add a new script, set its type to ```js``` in the name field type ```c3```. 
 * Click the crosshair button. Select the contect you what to add the file to and click ```Create and Open```.
 * On the Edit File tab click ```Upload file```, and select the bundled javascript file provided by C3 (can be downloaded from [here](https://github.com/c3js/c3/releases/tag/v0.4.18)).
 * Upload the c3.css file to the pega instace (via ```Records > Technical > Text File```)
