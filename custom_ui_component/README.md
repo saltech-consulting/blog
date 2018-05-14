@@ -60,7 +60,7 @@ On a section of the case, use section include with the following setup:
 - Clipboard page: .Address
 - Section: By name: AddressAutocomplete
 
-After starting you case you should see something similar:
+After starting your case, you should see something similar:
 
 ![Setup complete](images/setup_complete.png)
 
