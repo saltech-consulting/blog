@@ -2,14 +2,14 @@
 # Custom input formatting
 
   
-
+###
 The Pega7 platform as of now does not provide any out-of-the-box solution for real-time input formatting. Using custom javascript could help you reach your desired functionality.
 
   
 
 In our use case, we needed user input fields that could format bank account numbers, IBAN numbers and SWIFT codes automatically. While the user is able to add and remove these fields.
 
-  
+![input fomatter gif](images/input_formatter.gif)  
 
 So, we created a simple demo that shows how we created our solution using the Cleave.js external library, for additional information please visit [their github repository](https://nosir.github.io/cleave.js/).
 
@@ -51,7 +51,8 @@ Now, you only have to create your code. If your requirements aren't that complic
 		blocks: [ 8, 8, 8],
 		numericOnly: true,
 		delimiter: "-”  
-});
+    });
+
 
 
   
@@ -64,9 +65,7 @@ In our application, there were multiple input fields that were added and removed
 
   
 
-If you are interested, you can check our solution under // github route //
-
-// link to github file //
+If you are interested, you can check our solution under [here](scripts/inputformatter.js).
 
   
 
